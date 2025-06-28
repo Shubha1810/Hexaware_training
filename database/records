@@ -1,0 +1,124 @@
+use cars;
+insert into victims (firstname, lastname, dateofbirth, gender, contact_info) values
+('Anita', 'Rao', '1985-06-12', 'female', 'anita@x.com'),
+('Ravi', 'Verma', '1990-04-22', 'male', 'ravi@x.com'),
+('Priya', 'Mehta', '1992-11-19', 'female', 'priya@x.com'),
+('Amit', 'Singh', '1987-01-05', 'male', 'amit@x.com'),
+('Neha', 'Sharma', '1995-03-15', 'female', 'neha@x.com'),
+('Vikas', 'Nair', '1988-07-20', 'male', 'vikas@x.com'),
+('Kiran', 'Patil', '1993-09-09', 'female', 'kiran@x.com'),
+('Sunil', 'Kapoor', '1984-05-30', 'male', 'sunil@x.com'),
+('Meena', 'Joshi', '1996-12-12', 'female', 'meena@x.com'),
+('Deepak', 'Chopra', '1989-10-10', 'male', 'deepak@x.com'),
+('Sonal', 'Desai', '1991-08-08', 'female', 'sonal@x.com'),
+('Raj', 'Bhat', '1986-02-02', 'male', 'raj@x.com'),
+('Tina', 'Seth', '1994-06-06', 'female', 'tina@x.com'),
+('Arjun', 'Dutt', '1983-03-03', 'male', 'arjun@x.com'),
+('Ritu', 'Kohli', '1997-07-07', 'female', 'ritu@x.com');
+
+-------------------------------
+
+insert into suspects (firstname, lastname, dateofbirth, gender, contact_info) values
+('Karan', 'Malik', '1980-10-10', 'male', 'karan@x.com'),
+('Rekha', 'Shah', '1986-12-22', 'female', 'rekha@x.com'),
+('Sameer', 'Yadav', '1982-05-14', 'male', 'sameer@x.com'),
+('Geeta', 'Rawat', '1991-04-04', 'female', 'geeta@x.com'),
+('Manoj', 'Rane', '1984-08-08', 'male', 'manoj@x.com'),
+('Rina', 'Das', '1990-02-02', 'female', 'rina@x.com'),
+('Harish', 'Pillai', '1979-01-01', 'male', 'harish@x.com'),
+('Preeti', 'Shetty', '1988-09-09', 'female', 'preeti@x.com'),
+('Ajay', 'Dubey', '1985-07-07', 'male', 'ajay@x.com'),
+('Komal', 'Kumar', '1992-03-03', 'female', 'komal@x.com'),
+('Ramesh', 'Iyer', '1983-11-11', 'male', 'ramesh@x.com'),
+('Sneha', 'Rao', '1993-06-06', 'female', 'sneha@x.com'),
+('Raghu', 'Bose', '1981-01-15', 'male', 'raghu@x.com'),
+('Anjali', 'Bajaj', '1987-09-19', 'female', 'anjali@x.com'),
+('Nikhil', 'Goel', '1990-10-01', 'male', 'nikhil@x.com');
+
+----------------------------------
+insert into law_enforcement_agencies (agencyname, jurisdiction, contact_info) values
+('Central Police Station', 'Zone A', 'central@police.gov'),
+('North Precinct', 'Zone B', 'north@police.gov'),
+('East Division', 'Zone C', 'east@police.gov'),
+('South Unit', 'Zone D', 'south@police.gov'),
+('West Sector', 'Zone E', 'west@police.gov');
+
+------------------------------------
+insert into incidents (incidenttype, incidentdate, location_latitude, location_longitude, description, status, victimid, suspectid, agencyid) values
+('theft', '2024-01-01', 18.5, 73.8, 'wallet stolen', 'open', 1, 1, 1),
+('murder', '2023-02-02', 18.6, 73.7, 'body found in alley', 'closed', 2, 2, 2),
+('robbery', '2022-03-03', 18.4, 73.6, 'store robbed', 'under investigation', 3, 3, 3),
+('assault', '2024-04-04', 18.7, 73.9, 'man assaulted in park', 'open', 4, 4, 4),
+('kidnapping', '2023-05-05', 18.3, 73.5, 'child missing', 'open', 5, 5, 5),
+('fraud', '2022-06-06', 18.2, 73.4, 'scam call', 'closed', 6, 6, 1),
+('homicide', '2023-07-07', 18.9, 73.1, 'high-profile murder', 'open', 7, 7, 2),
+('cybercrime', '2024-08-08', 18.0, 73.0, 'email hacked', 'open', 8, 8, 3),
+('arson', '2023-09-09', 18.1, 73.2, 'building set on fire', 'under investigation', 9, 9, 4),
+('burglary', '2022-10-10', 18.8, 73.3, 'house break-in', 'open', 10, 10, 5),
+('theft', '2024-01-11', 18.55, 73.85, 'bag snatched', 'closed', 11, 11, 1),
+('fraud', '2023-12-12', 18.65, 73.75, 'atm fraud', 'open', 12, 12, 2),
+('assault', '2024-03-13', 18.75, 73.65, 'domestic violence', 'open', 13, 13, 3),
+('homicide', '2024-05-14', 18.85, 73.55, 'double murder', 'under investigation', 14, 14, 4),
+('robbery', '2024-06-15', 18.95, 73.45, 'jewelry store robbed', 'open', 15, 15, 5);
+
+--------------------------------------------
+
+insert into evidence (description, location_found, incidentid) values
+('knife with blood', 'crime scene', 2),
+('footprint', 'alley', 3),
+('burned cloth', 'house basement', 9),
+('smashed phone', 'victim home', 4),
+('empty wallet', 'bus stop', 1),
+('email logs', 'computer', 8),
+('security footage', 'shop cctv', 3),
+('gun', 'vehicle', 14),
+('mask', 'outside store', 15),
+('broken window', 'residence', 10),
+('fake ID card', 'office', 6),
+('bank transfer slips', 'fraud office', 12),
+('hair sample', 'bedroom', 13),
+('plastic bag', 'field', 5),
+('lighter', 'arson site', 9);
+---------------------------------
+
+insert into reports (incidentid, reportingofficer, reportdate, reportdetails, status) values
+(1, 1, '2024-01-02', 'Report filed for theft', 'finalized'),
+(2, 2, '2023-02-03', 'Murder under investigation', 'finalized'),
+(3, 3, '2022-03-04', 'Robbery evidence collected', 'draft'),
+(4, 4, '2024-04-05', 'Assault case started', 'finalized'),
+(5, 5, '2023-05-06', 'Child still missing', 'draft'),
+(6, 6, '2022-06-07', 'Fraud suspect arrested', 'finalized'),
+(7, 7, '2023-07-08', 'Homicide major lead', 'draft'),
+(8, 8, '2024-08-09', 'Cybercrime alert', 'finalized'),
+(9, 9, '2023-09-10', 'Arson investigation report', 'draft'),
+(10, 10, '2022-10-11', 'Burglary file ready', 'finalized'),
+(11, 11, '2024-01-12', 'Theft resolved', 'finalized'),
+(12, 12, '2023-12-13', 'ATM fraud deep dive', 'draft'),
+(13, 13, '2024-03-14', 'Domestic violence reported', 'finalized'),
+(14, 14, '2024-05-15', 'Multiple homicide incident', 'finalized'),
+(15, 15, '2024-06-16', 'Robbery complete analysis', 'finalized');
+
+-------------------------
+insert into cases (description) values
+('Robbery string in city'),
+('Unsolved murders'),
+('High-profile fraud cases'),
+('Kidnapping investigations'),
+('Cybercrime cluster');
+
+insert into officers (firstname, lastname, badgenumber, `rank`, contact_info, agencyid) values
+('Raj', 'Kumar', 'B1001', 'Inspector', 'raj@police.gov', 1),
+('Asha', 'Verma', 'B1002', 'Sub-Inspector', 'asha@police.gov', 1),
+('Vijay', 'Patel', 'B1003', 'Constable', 'vijay@police.gov', 2),
+('Anjali', 'Sharma', 'B1004', 'Inspector', 'anjali@police.gov', 2),
+('Rohit', 'Menon', 'B1005', 'Sub-Inspector', 'rohit@police.gov', 3),
+('Kavita', 'Deshmukh', 'B1006', 'Inspector', 'kavita@police.gov', 3),
+('Ajay', 'Naik', 'B1007', 'Constable', 'ajay@police.gov', 4),
+('Pooja', 'Reddy', 'B1008', 'Inspector', 'pooja@police.gov', 4),
+('Suresh', 'Iyer', 'B1009', 'Sub-Inspector', 'suresh@police.gov', 5),
+('Neeta', 'Mishra', 'B1010', 'Constable', 'neeta@police.gov', 5),
+('Ramesh', 'Joshi', 'B1011', 'Inspector', 'ramesh@police.gov', 1),
+('Seema', 'Singh', 'B1012', 'Sub-Inspector', 'seema@police.gov', 2),
+('Arun', 'Yadav', 'B1013', 'Constable', 'arun@police.gov', 3),
+('Isha', 'Bora', 'B1014', 'Inspector', 'isha@police.gov', 4),
+('Nitin', 'Roy', 'B1015', 'Constable', 'nitin@police.gov', 5);

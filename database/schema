@@ -1,0 +1,96 @@
+-- CASE STUDY
+
+create database cars;
+use cars;
+
+-- CREATING TABLES
+create table victims (
+    victimid int primary key auto_increment,
+    firstname varchar(50) not null,
+    lastname varchar(50) not null,
+    dateofbirth date not null,
+    gender varchar(10) not null,
+    contact_info varchar(100) not null
+);
+desc victims;
+
+create table suspects (
+    suspectid int primary key auto_increment,
+    firstname varchar(50) not null,
+    lastname varchar(50) not null,
+    dateofbirth date not null,
+    gender varchar(10) not null,
+    contact_info varchar(100) not null
+);
+desc suspects;
+
+create table law_enforcement_agencies (
+    agencyid int primary key auto_increment,
+    agencyname varchar(100) not null,
+    jurisdiction varchar(100) not null,
+    contact_info varchar(100) not null
+);
+desc law_enforcement_agencies;
+
+create table officers (
+    officerid int primary key auto_increment,
+    firstname varchar(50) not null,
+    lastname varchar(50) not null,
+    badgenumber varchar(20) not null,
+    `rank` varchar(30) not null,
+    contact_info varchar(100) not null,
+    agencyid int not null,
+    foreign key (agencyid) references law_enforcement_agencies(agencyid)
+);
+desc officers;
+
+create table incidents (
+    incidentid int primary key auto_increment,
+    incidenttype varchar(50) not null,
+    incidentdate date not null,
+    location_latitude decimal(9,6) not null,
+    location_longitude decimal(9,6) not null,
+    description text not null,
+    status varchar(30) not null,
+    victimid int not null,
+    suspectid int not null,
+    agencyid int not null,
+    foreign key (victimid) references victims(victimid),
+    foreign key (suspectid) references suspects(suspectid),
+    foreign key (agencyid) references law_enforcement_agencies(agencyid)
+);
+desc incidents;
+
+create table evidence (
+    evidenceid int primary key auto_increment,
+    description text not null,
+    location_found varchar(100) not null,
+    incidentid int not null,
+    foreign key (incidentid) references incidents(incidentid)
+);
+desc evidence;
+
+create table reports (
+    reportid int primary key auto_increment ,
+    incidentid int not null,
+    reportingofficer int not null,
+    reportdate date not null,
+    reportdetails text not null,
+    status varchar(30) not null,
+    foreign key (incidentid) references incidents(incidentid),
+    foreign key (reportingofficer) references officers(officerid)
+);
+desc reports;
+
+
+create table cases (
+    caseid int primary key auto_increment,
+    description varchar(255) not null
+);
+
+create table case_incidents (
+    caseid int,
+    incidentid int,
+    foreign key (caseid) references cases(caseid),
+    foreign key (incidentid) references incidents(incidentid)
+);
