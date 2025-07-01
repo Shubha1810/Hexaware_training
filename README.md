@@ -16,7 +16,7 @@ Key features include:
 
 ## 🗂️ **Project Structure**
 
-
+```plaintext
 cars_project/
 │
 ├── dao/                            # Business logic and service layer
@@ -53,7 +53,7 @@ cars_project/
 │   └── db_config.properties
 │
 └── .venv/                          # Virtual environment (optional)
-
+```
 
 
 ## 🔄 **Major Functional Flow**
@@ -91,13 +91,14 @@ Supports adding:
   * `@gmail.com` → for victims/suspects/officers
   * `@police.gov` → for agencies
 
+
 ### 3️⃣ **Case Management**
 
 * Create new case with a **description** and **linked incidents**
 * Update or view existing case details
 * View all cases with timestamps
 
-
+  
 ### 4️⃣ **Reporting Capabilities**
 
 Generate incident/case reports:
@@ -122,12 +123,14 @@ Generate incident/case reports:
 
 Data is shown in **tabular format** using the `tabulate` library:
 
-
+```bash
 +----+---------------+------------+-----------+------------+--------------------+
 | ID | Incident Type | Date       | Latitude  | Longitude  | Description        |
 +----+---------------+------------+-----------+------------+--------------------+
 | 1  | Robbery       | 2025-07-01 | 19.0760   | 72.8777    | ATM Robbery        |
 +----+---------------+------------+-----------+------------+--------------------+
+```
+
 
 ## ⚙️ **Tech Stack**
 
@@ -148,14 +151,23 @@ Data is shown in **tabular format** using the `tabulate` library:
 * MySQL server with `cars` schema created
 * Internet connection (required for geolocation)
 
+
 ### 🛠️ **Installation**
 
 Install required libraries:
+
+```bash
 pip install mysql-connector-python geopy tabulate
+```
+
 
 ### 🚀 **Run the Application**
+
+```bash
 cd main
 python main_module.py
+```
+
 
 ## 🧭 **Sample Workflow**
 
@@ -169,6 +181,7 @@ python main_module.py
    * Month/Year
    * Custom range
 
+
 ## ❗ **Validations & Error Handling**
 
 * ❌ Empty fields are flagged immediately
@@ -179,8 +192,6 @@ python main_module.py
   * `@police.gov` for law enforcement agencies
 * 🌐 Invalid location → shown clearly with error
 * 🧨 Custom exception `IncidentNumberNotFoundException` is handled
-
-
 
 ## 📈 **Use Case Scenarios**
 
@@ -200,9 +211,3 @@ python main_module.py
 * 📤 Export reports to PDF/CSV
 * 📱 SMS/email alerts for new incidents or report summaries
 
-
-> ✅ *This project is a complete CLI-based simulation of a real-world Crime Reporting and Analysis System built using modular Python and MySQL backend. Perfect for case study implementations, prototypes, or extensions into full-stack applications.*
-
----
-
-Let me know if you'd like this exported as a **PDF** or want a **Word doc version** for presentation purposes.
